@@ -177,6 +177,9 @@ public class PropertyPlaceholderHelper {
 				visitedPlaceholders.remove(originalPlaceholder);
 			}
 			else {
+				if(logger.isWarnEnabled()) {
+					logger.warn("Failed to find placeholder suffix in string value \"" + result + "\"");
+				}
 				startIndex = -1;
 			}
 		}
